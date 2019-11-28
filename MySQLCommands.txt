@@ -1,0 +1,14 @@
+create table Department (ID int auto_increment, name varchar(25), primary key (ID));
+create table Employee (ID int auto_increment, name varchar(25), department varchar(25), primary key (ID));
+
+ALTER TABLE Employee ADD foreign key (department) REFERENCES Department (ID) ON DELETE CASCADE;
+
+INSERT into Department (name) VALUES("Development"), ("Marketing"), ("HR");
+INSERT into Employee (name,department) VALUES("Tom Cruise",1), ("Tom Hanks",1), ("Tom Hiddlestone",2);
+
+ALTER TABLE Employee ADD (salary float NOT NULL) ;
+
+TRUNCATE TABLE Employee;
+
+SELECT * from Employee;
+SELECT * from Department;
